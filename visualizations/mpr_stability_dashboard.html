@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MPR Stability Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        iframe { width: 100%; height: 700px; border: 1px solid #ccc; }
+        input[type="range"] { width: 100%; }
+        label { font-weight: bold; display: block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>MPR Stability Probability Dashboard</h1>
+    <p>Use the slider to explore stability probability surfaces across reinforcer magnitudes (m).</p>
+    <label for="mSlider">Reinforcer Magnitude (m): <span id="mValue">0.00</span></label>
+    <input type="range" id="mSlider" min="0" max="120" value="0" step="1" oninput="updateFrame(this.value)">
+    <iframe id="plotFrame" src="surface_m_0.00.html"></iframe>
+    <script>
+        const mVals = [...Array(121).keys()].map(i => (i * 0.25).toFixed(2));
+        function updateFrame(index) {
+            const m = mVals[index];
+            document.getElementById('mValue').innerText = m;
+            document.getElementById('plotFrame').src = `surface_m_${m}.html`;
+        }
+    </script>
+</body>
+</html>
