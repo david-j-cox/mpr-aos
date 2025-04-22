@@ -32,6 +32,17 @@ This repository contains analysis and visualizations related to the Mathematical
 2. Install required dependencies (if any)
 3. Open and run the Jupyter notebooks
 
+## Branch Management
+
+This repository uses two main branches:
+- `main`: Production-ready code and stable releases
+- `dev`: Development branch for ongoing work
+
+### Workflow
+1. Create feature branches from `dev` for new features or changes
+2. Merge feature branches back into `dev` when complete
+3. Merge `dev` into `main` for releases
+
 ## License
 
 [Add your license information here] 
